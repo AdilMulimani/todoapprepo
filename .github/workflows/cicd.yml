@@ -1,0 +1,29 @@
+name: Deploy to Azure App Service
+
+on:
+push:
+branches:
+  - master
+
+  jobs:
+  build-and-deploy:
+  runs-on: windows_lastest
+  steps:
+    - name : Checkout Source
+  uses: actions/checkout@v3
+    - name: Setup Node.js version
+    uses: actions/setup-node@v4
+    with:
+    node-version: '18.x'
+    -name: install Dependencies
+    run : npm install
+      - name: Deploy to Azure App Service
+    uses : azure/webapps-deploy@v2
+    with :
+    app-name : adilstodoapp
+    publish-profile : ${{secrets.AZURE_SECRET}}
+    package :.
+
+
+
+
