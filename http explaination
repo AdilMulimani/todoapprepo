@@ -1,0 +1,36 @@
+//getting the Node.js package of http to create a server
+const http = require("http")
+
+//creating a server locally
+//create server method asks for a callback function
+http.createServer((req, res)=>{
+    //request codes->200 success,400 program error,500 server issue
+    //HTTP headers are components of the HTTP protocol
+   // that are sent between a client (such as a web browser) and a server.
+    //They provide additional information about the request or the response,
+     // helping both the client and the server understand how to handle the communication.
+    res.writeHead(200,{
+        'Content-type':'text/plain'
+    });
+  // res.end() method is used to end the response process and send the response to the client.
+  //This method takes an optional data parameter
+  //that allows you to include data in the response body before ending the response.
+    res.end("Hello World");
+})
+//The listen method is called on the server object returned by createServer.
+//It starts the server and makes it listen on the specified port (3000 in this case).
+//Once the server is successfully started, the provided callback function is invoked,
+//which logs a message to the console indicating that the server is connected and listening on port 3000.
+    .listen(3000,()=>{
+    console.log("Connected to server on port 3000");
+});
+
+
+//how to use middle ware
+//note always use middle ware at the start,like before requests
+// app.use((req, res, next)=>
+// {
+//     console.log("middle ware ran".blue)
+//     req.title = "To Do App"
+//     next();
+// })

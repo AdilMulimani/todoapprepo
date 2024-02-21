@@ -1,0 +1,12 @@
+1)Colors node.js package
+The "colors" package in Node.js is a utility library used to add color and style to console output in terminal environments.
+It allows developers to easily apply colors, background colors, styles (such as bold or underline), and other formatting to text printed to the console.
+
+Using the "colors" package can be particularly helpful when debugging or logging messages to the console,
+ as it allows developers to visually distinguish between different types of output
+ or highlight important information.
+
+Example:console.log("Adil".red)
+
+2)Express node.js package
+
